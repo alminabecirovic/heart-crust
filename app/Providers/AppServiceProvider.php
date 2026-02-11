@@ -7,15 +7,16 @@ use Illuminate\Support\Facades\URL;
 
 class AppServiceProvider extends ServiceProvider
 {
-    public function register(): void
+    public function boot()
     {
-        //
-    }
-
-    public function boot(): void
-    {
-        if (config('app.env') === 'production') {
+        // Форсирај HTTPS у продукцији
+        if ($this->app->environment('production')) {
             URL::forceScheme('https');
         }
+    }
+
+    public function register()
+    {
+        //
     }
 }
