@@ -3,8 +3,7 @@
     "private": true,
     "type": "module",
     "scripts": {
-        "build": "vite build",
-        "dev": "vite"
+      "build": "echo 'Nema build koraka'"
     },
     "devDependencies": {
         "@tailwindcss/vite": "^4.0.0",
