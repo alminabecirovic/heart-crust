@@ -1,0 +1,220 @@
+/* Global Styles - Heart&Crust Bakery */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --primary-color: #D6A99D;
+  --accent-color: #F7F1DE;
+  --dark-text: #333;
+  --light-text: #8B6F5E;
+  --border-color: #D6A99D;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, #F0E4D3 0%, #DCC5B2 100%);
+  color: var(--dark-text);
+  line-height: 1.6;
+  min-height: 100vh;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* Typography */
+h1, h2, h3, h4, h5, h6 {
+  color: #D6A99D;
+  font-family: 'Georgia', serif;
+  font-weight: 600;
+}
+
+h1 {
+  font-size: 36px;
+}
+
+h2 {
+  font-size: 28px;
+}
+
+h3 {
+  font-size: 22px;
+}
+
+p {
+  color: var(--light-text);
+  font-size: 15px;
+}
+
+/* Links */
+a {
+  color: #D6A99D;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #C4957F;
+  text-decoration: underline;
+}
+
+
+.btn-primary {
+  background: #D6A99D;
+  color: white;
+}
+
+.btn-primary:hover {
+  background: #C4957F;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(214, 169, 157, 0.3);
+}
+
+.btn-secondary {
+  background: transparent;
+  color: #D6A99D;
+  border: 2px solid #D6A99D;
+}
+
+.btn-secondary:hover {
+  background: #D6A99D;
+  color: white;
+}
+
+/* Cards */
+.card {
+  background: #FAF7F3;
+  border-radius: 12px;
+  padding: 30px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  border: 2px solid #D6A99D;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px rgba(214, 169, 157, 0.2);
+}
+
+/* Forms */
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  color: var(--light-text);
+  font-weight: 500;
+  margin-bottom: 8px;
+  font-size: 14px;
+}
+
+.form-group input,
+.form-group textarea,
+.form-group select {
+  width: 100%;
+  padding: 12px 15px;
+  border: 1px solid #D6A99D;
+  border-radius: 6px;
+  font-size: 14px;
+  background: white;
+  color: var(--dark-text);
+  font-family: inherit;
+}
+
+.form-group input:focus,
+.form-group textarea:focus,
+.form-group select:focus {
+  outline: none;
+  border-color: #D6A99D;
+  box-shadow: 0 0 8px rgba(214, 169, 157, 0.3);
+  background: #FFFBF5;
+}
+
+.form-group textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+/* Spacing */
+.mt-1 { margin-top: 10px; }
+.mt-2 { margin-top: 20px; }
+.mt-3 { margin-top: 30px; }
+.mb-1 { margin-bottom: 10px; }
+.mb-2 { margin-bottom: 20px; }
+.mb-3 { margin-bottom: 30px; }
+.p-1 { padding: 10px; }
+.p-2 { padding: 20px; }
+.p-3 { padding: 30px; }
+
+/* Utilities */
+.text-center {
+  text-align: center;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.text-light {
+  color: var(--light-text);
+}
+
+.text-primary {
+  color: #D6A99D;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  h1 { font-size: 28px; }
+  h2 { font-size: 24px; }
+  h3 { font-size: 20px; }
+
+  .container {
+    padding: 0 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  h1 { font-size: 24px; }
+  h2 { font-size: 20px; }
+  h3 { font-size: 18px; }
+
+  .card {
+    padding: 20px;
+  }
+
+  .btn {
+    width: 100%;
+    padding: 12px;
+  }
+}
+/* ===============================
+   GLOBAL FIX – no hover movement
+   =============================== */
+
+/* Dugmad – bez pomeranja */
+.btn-primary:hover,
+.btn-secondary:hover,
+.btn:hover {
+  transform: none !important;
+}
+
+/* Kartice – bez pomeranja */
+.card:hover {
+  transform: none !important;
+}
+
+/* Smooth hover bez skakanja */
+.btn,
+.card {
+  transition: background-color 0.25s ease, color 0.25s ease, box-shadow 0.25s ease;
+}

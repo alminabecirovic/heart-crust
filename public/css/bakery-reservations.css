@@ -1,0 +1,231 @@
+/* Bakery Reservations Page Styles */
+
+.container h1 {
+  color: #D9A299;
+  font-size: 32px;
+  font-weight: 600;
+  margin: 30px 0;
+  text-align: center;
+  font-family: 'Georgia', serif;
+}
+
+/* Table Container */
+table {
+  width: 100%;
+  background: #FAF7F3;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 2px solid #D9A299;
+  margin-top: 20px;
+  border-collapse: separate;
+  border-spacing: 0;
+}
+
+/* Table Header */
+thead {
+  background: #D9A299;
+}
+
+thead tr th {
+  padding: 18px 15px;
+  text-align: left;
+  font-weight: 600;
+  font-size: 15px;
+  color: #F0E4D3;
+  letter-spacing: 0.5px;
+  border-bottom: 2px solid #D9A299;
+}
+
+/* Table Body */
+tbody tr {
+  border-bottom: 1px solid #F0E4D3;
+}
+
+tbody tr:last-child {
+  border-bottom: none;
+}
+
+tbody tr:hover {
+  background: #D9A299;
+}
+
+tbody tr td {
+  padding: 16px 15px;
+  color: #8B6F5E;
+  font-size: 14px;
+  vertical-align: middle;
+}
+
+/* Status Badges */
+tbody tr td span {
+  font-weight: 600;
+  padding: 4px 10px;
+  border-radius: 5px;
+  display: inline-block;
+  font-size: 13px;
+}
+
+
+
+/* Action Buttons */
+tbody tr td form {
+  display: inline-block;
+  margin: 0;
+}
+
+tbody tr td .btn {
+  padding: 8px 16px;
+  font-size: 13px;
+  border: 1.5px solid #D9A299;
+  display: inline-block;
+  white-space: nowrap;
+  background-color: #F0E4D3;
+  color: #D9A299;
+}
+
+tbody tr td .btn:hover {
+  background-color: #D9A299;
+  color: white;
+}
+
+tbody tr td .btn-success {
+  background-color: #F0E4D3;
+  color: #D9A299;
+  border-color: #D9A299;
+}
+
+tbody tr td .btn-success:hover {
+  background-color: #D9A299;
+  color: white;
+  border-color: #D9A299;
+}
+
+/* Empty State */
+tbody tr td[colspan] {
+  text-align: center;
+  padding: 40px 20px;
+  font-style: italic;
+  font-size: 15px;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  table {
+    font-size: 13px;
+  }
+
+  thead tr th,
+  tbody tr td {
+    padding: 12px 10px;
+  }
+
+  tbody tr td .btn {
+    padding: 6px 12px;
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 768px) {
+  .container h1 {
+    font-size: 26px;
+    margin: 20px 0;
+  }
+
+  /* Stack table for mobile */
+  table,
+  thead,
+  tbody,
+  th,
+  td,
+  tr {
+    display: block;
+  }
+
+  thead {
+    display: none;
+  }
+
+  tbody tr {
+    margin-bottom: 20px;
+    border: 2px solid #D9A299;
+    border-radius: 12px;
+    overflow: hidden;
+    background: #FBF3D5;
+  }
+
+  tbody tr:hover {
+    background: #FBF3D5;
+  }
+
+  tbody tr td {
+    position: relative;
+    padding: 12px 15px 12px 45%;
+    text-align: right;
+    border-bottom: 1px solid #F0E4D3;
+  }
+
+  tbody tr td:last-child {
+    border-bottom: none;
+  }
+
+  tbody tr td::before {
+    content: attr(data-label);
+    position: absolute;
+    left: 15px;
+    top: 12px;
+    font-weight: 600;
+    color: #D9A299;
+    text-align: left;
+  }
+
+  tbody tr td .btn {
+    width: 100%;
+    margin-top: 5px;
+  }
+
+  tbody tr td form {
+    width: 100%;
+  }
+
+  /* Empty state on mobile */
+  tbody tr td[colspan] {
+    padding: 30px 15px;
+    text-align: center;
+  }
+
+  tbody tr td[colspan]::before {
+    display: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .container h1 {
+    font-size: 22px;
+  }
+
+  table {
+    border-radius: 8px;
+  }
+
+  tbody tr {
+    margin-bottom: 15px;
+  }
+
+  tbody tr td {
+    padding: 10px 12px 10px 42%;
+    font-size: 13px;
+  }
+
+  tbody tr td::before {
+    font-size: 12px;
+    left: 12px;
+  }
+}
+
+.btn {
+  transition: background-color 0.25s ease, color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.btn:hover {
+  transform: none !important;
+}

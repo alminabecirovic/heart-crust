@@ -17,7 +17,12 @@ class AdminController extends Controller
         $pendingUsers = User::where('is_approved', false)
                             ->whereIn('role', ['bakery', 'user'])
                             ->get();
-        return view('admin.index', compact('pendingUsers'));
+        
+        $approvedUsers = User::where('is_approved', true)
+                             ->whereIn('role', ['bakery', 'user'])
+                             ->get();
+        
+        return view('admin.index', compact('pendingUsers', 'approvedUsers'));
     }
 
     public function approveUser($id)
@@ -28,7 +33,7 @@ class AdminController extends Controller
 
         $user = User::findOrFail($id);
         $user->update(['is_approved' => true]);
-        return back()->with('success', 'User approved successfully!');
+        return back()->with('success', 'Korisnik je uspešno odobren!');
     }
 
     public function deleteUser($id)
@@ -39,7 +44,7 @@ class AdminController extends Controller
 
         $user = User::findOrFail($id);
         $user->delete();
-        return back()->with('success', 'User deleted successfully!');
+        return back()->with('success', 'Korisnik je uspešno obrisan!');
     }
 
     public function deleteFoodListing($id)
@@ -53,6 +58,6 @@ class AdminController extends Controller
             @unlink(public_path('storage/' . $listing->image));
         }
         $listing->delete();
-        return back()->with('success', 'Food listing deleted successfully!');
+        return back()->with('success', 'Oglas je uspešno obrisan!');
     }
 }

@@ -1,0 +1,234 @@
+header {
+    background-color: #FAF7F3;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 100%;
+    padding: 0 10px;
+    position: relative;
+}
+
+.logo {
+    width: 130px;
+    height: 100px;
+    border-radius: 6px;
+    flex-shrink: 0;
+}
+
+.nav-toggle {
+    display: none;
+}
+
+.hamburger {
+    display: none;
+    flex-direction: column;
+    background: none;
+    border: none;
+    cursor: pointer;
+    gap: 10px;
+    padding: 10px;
+}
+
+.hamburger span {
+    width: 25px;
+    height: 3px;
+    background-color: #ca8d84;
+    border-radius: 2px;
+}
+
+.nav-toggle:checked ~ .hamburger span:nth-child(1) {
+    transform: rotate(45deg) translate(10px, 10px);
+}
+
+.nav-toggle:checked ~ .hamburger span:nth-child(2) {
+    opacity: 0;
+}
+
+.nav-toggle:checked ~ .hamburger span:nth-child(3) {
+    transform: rotate(-45deg) translate(7px, -7px);
+}
+
+.nav-container {
+    display: flex;
+    align-items: center;
+    gap: 13px;
+    margin-left: auto;
+}
+
+.nav-links {
+    display: flex;
+    gap: 0.75rem;
+    align-items: center;
+}
+
+.nav-links a {
+    text-decoration: none;
+    background-color: #FAF7F3;
+    color: #ca8d84;
+    border-radius: 7px;
+    border: 1.5px solid #D6A99D;
+    padding: 10px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    font-size: 0.95rem;
+    font-weight: 500;
+    cursor: pointer;
+    display: inline-block;
+    white-space: nowrap;
+}
+
+.nav-links a:hover {
+    background-color: #CA8D84;
+    color: #FAF7F3;
+     text-decoration: none;
+}
+
+.nav-auth {
+    display: flex;
+    gap: 0.75rem;
+    align-items: center;
+}
+
+.btn {
+    text-decoration: none;
+    background-color: #FAF7F3;
+    color: #ca8d84;
+    border-radius: 7px;
+    border: 1.5px solid #D6A99D;
+    padding: 10px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    font-size: 0.95rem;
+    font-weight: 500;
+    cursor: pointer;
+    display: inline-block;
+    white-space: nowrap;
+}
+
+.btn:hover {
+    background-color: #CA8D84;
+    color: #FAF7F3;
+     text-decoration: none;
+}
+
+.btn-danger {
+    background-color: #FAF7F3;
+    color:  #ca8d84;;
+}
+
+.btn-danger:hover {
+    background-color:  #ca8d84;;
+   color: #FAF7F3;
+    text-decoration: none;
+}
+
+.btn-success {
+     background-color: #FAF7F3;
+    color:  #ca8d84;;
+}
+
+.btn-success:hover {
+    background-color:  #ca8d84;
+    color: #FAF7F3;
+     text-decoration: none;
+}
+
+.nav-links a.active {
+    background-color: #ca8d84;
+    border-radius: 5px;
+    color: #FAF7F3;
+}
+
+@media (max-width: 768px) {
+    .hamburger {
+        display: flex;
+    }
+
+    .logo {
+        width: 50px;
+        height: 50px;
+    }
+
+    .nav-toggle {
+        display: none;
+    }
+
+    .nav-container {
+        position: absolute;
+        top: 70px;
+        left: 0;
+        right: 0;
+        background-color: #FAF7F3;
+        flex-direction: column;
+        gap: 0;
+        margin-left: 0;
+        max-height: 0;
+        overflow: hidden;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        z-index: 1000;
+    }
+
+    .nav-toggle:checked ~ .nav-container {
+        max-height: 500px;
+    }
+
+    .nav-links {
+        flex-direction: column;
+        width: 100%;
+        gap: 0;
+        border-bottom: 1px solid #D6A99D;
+    }
+
+    .nav-links a {
+        width: 100%;
+        border: none;
+        border-bottom: 1px solid #D6A99D;
+        border-radius: 0;
+        padding: 15px;
+        background-color: #FAF7F3;
+        text-align: left;
+    }
+
+    .nav-links a:hover {
+        background-color: #f0e8e3;
+        color: #ca8d84;
+    }
+
+    .nav-auth {
+        flex-direction: column;
+        width: 100%;
+        gap: 0;
+        padding: 15px;
+    }
+
+    .nav-auth .btn {
+        width: 100%;
+        border-radius: 7px;
+    }
+
+    header {
+        position: relative;
+    }
+}
+
+/* ===============================
+   FIX – no hover movement (navbar)
+   =============================== */
+
+/* Navbar dugmad i linkovi */
+.nav-links a:hover,
+.nav-auth .btn:hover,
+.btn:hover {
+  transform: none !important;
+}
+
+/* Smooth hover bez pomeranja */
+.nav-links a,
+.nav-auth .btn,
+.btn {
+  transition: background-color 0.2s ease, color 0.2s ease;
+}

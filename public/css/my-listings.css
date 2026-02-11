@@ -1,0 +1,190 @@
+/* My Listings Page Styles */
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 25px;
+  margin-top: 30px;
+  padding: 20px 0;
+}
+
+.grid .card {
+  background: #FAF7F3;
+  border-radius: 12px;
+  padding: 25px;
+  border: 2px solid #D6A99D;
+  display: flex;
+  flex-direction: column;
+}
+
+.grid .card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 15px;
+  border: 2px solid #D6A99D;
+}
+
+.grid .card h3 {
+  color: #D6A99D;
+  font-size: 22px;
+  font-weight: 600;
+  margin-bottom: 15px;
+  font-family: 'Georgia', serif;
+}
+
+.grid .card p {
+  color: #8B6F5E;
+  font-size: 14px;
+  margin-bottom: 10px;
+  line-height: 1.6;
+}
+
+.grid .card p strong {
+  color: #8B6F5E;
+  font-weight: 600;
+}
+
+.grid .card > div {
+  margin-top: auto;
+  padding-top: 15px;
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.grid .card .btn {
+  padding: 10px 20px;
+  font-size: 14px;
+  flex: 1;
+  min-width: 100px;
+  text-align: center;
+  border: 1.5px solid #D6A99D;
+}
+
+.grid .card form {
+  flex: 1;
+  min-width: 100px;
+}
+
+.grid .card form .btn {
+  width: 100%;
+}
+
+/* Empty state */
+.grid + p {
+  text-align: center;
+  color: #8B6F5E;
+  font-size: 16px;
+  margin-top: 50px;
+  font-style: italic;
+}
+
+/* Page header button */
+.container > .btn {
+  display: inline-block;
+  padding: 12px 25px;
+  font-size: 15px;
+  margin-top: 20px;
+  border: 1.5px solid #D6A99D;
+}
+
+/* Status colors */
+.grid .card p span {
+  font-weight: 600;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .grid {
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+  }
+
+  .grid .card {
+    padding: 20px;
+  }
+
+  .grid .card img {
+    height: 180px;
+  }
+
+  .grid .card h3 {
+    font-size: 20px;
+  }
+
+  .grid .card > div {
+    flex-direction: column;
+  }
+
+  .grid .card .btn {
+    width: 100%;
+    flex: none;
+  }
+
+  .grid .card form {
+    flex: none;
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .grid {
+    grid-template-columns: 1fr;
+    gap: 15px;
+    padding: 10px 0;
+  }
+
+  .grid .card {
+    padding: 15px;
+  }
+
+  .grid .card img {
+    height: 160px;
+  }
+
+  .grid .card h3 {
+    font-size: 18px;
+  }
+
+  .grid .card p {
+    font-size: 13px;
+  }
+
+  .container > .btn {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+/* Consistent button styling */
+.grid .card .btn-danger {
+  background-color: #FAF7F3;
+  color: #ca8d84;
+  border: 1.5px solid #D6A99D;
+}
+
+.grid .card .btn-danger:hover {
+  background-color: #ca8d84;
+  color: #FAF7F3;
+}
+/* ===============================
+   FIX – no hover movement (grid)
+   =============================== */
+
+/* Dugmad u karticama */
+.grid .card .btn:hover {
+  transform: none !important;
+}
+
+/* Kartice u gridu */
+.grid .card:hover {
+  transform: none !important;
+}
+
+/* Smooth hover bez pomeranja */
+.grid .card,
+.grid .card .btn {
+  transition: background-color 0.25s ease, color 0.25s ease, box-shadow 0.25s ease;
+}

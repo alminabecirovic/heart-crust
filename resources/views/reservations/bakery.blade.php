@@ -1,18 +1,18 @@
 @extends('layouts.app')
 
 @section('content')
-<h1>Reservations for My Food</h1>
+<h1>Rezervacije za moju hranu</h1>
 
 <table>
     <thead>
         <tr>
-            <th>Food</th>
-            <th>Customer</th>
-            <th>Customer Email</th>
-            <th>Quantity</th>
+            <th>Hrana</th>
+            <th>Korisnik</th>
+            <th>Email korisnika</th>
+            <th>Količina</th>
             <th>Status</th>
-            <th>Reserved At</th>
-            <th>Actions</th>
+            <th>Datum rezervacije</th>
+            <th>Akcije</th>
         </tr>
     </thead>
     <tbody>
@@ -24,11 +24,11 @@
                 <td>{{ $reservation->quantity }}</td>
                 <td>
                     @if($reservation->status === 'pending')
-                        <span style="color: orange;">Pending</span>
+                        <span>Na čekanju</span>
                     @elseif($reservation->status === 'completed')
-                        <span style="color: green;">Completed</span>
+                        <span>Završeno</span>
                     @else
-                        <span style="color: red;">Cancelled</span>
+                        <span>Otkazano</span>
                     @endif
                 </td>
                 <td>{{ $reservation->created_at->format('d.m.Y H:i') }}</td>
@@ -36,16 +36,18 @@
                     @if($reservation->status === 'pending')
                         <form action="{{ route('reservations.complete', $reservation->id) }}" method="POST" style="display: inline;">
                             @csrf
-                            <button type="submit" class="btn btn-success">Mark as Completed</button>
+                            <button type="submit" class="btn btn-success">
+                                Označi kao završeno
+                            </button>
                         </form>
                     @elseif($reservation->status === 'completed')
-                        <span style="color: green;">✓ Completed</span>
+                        <span>Završeno</span>
                     @endif
                 </td>
             </tr>
         @empty
             <tr>
-                <td colspan="7">No reservations yet.</td>
+                <td colspan="7">Još uvek nema rezervacija.</td>
             </tr>
         @endforelse
     </tbody>

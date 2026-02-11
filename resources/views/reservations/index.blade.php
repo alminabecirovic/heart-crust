@@ -1,18 +1,18 @@
 @extends('layouts.app')
 
 @section('content')
-<h1>My Reservations</h1>
+<h1>Moje rezervacije</h1>
 
 <table>
     <thead>
         <tr>
-            <th>Food</th>
-            <th>Bakery</th>
-            <th>Pickup Address</th>
-            <th>Quantity</th>
+            <th>Hrana</th>
+            <th>Pekara</th>
+            <th>Adresa za preuzimanje</th>
+            <th>Količina</th>
             <th>Status</th>
-            <th>Reserved At</th>
-            <th>Actions</th>
+            <th>Datum rezervacije</th>
+            <th>Akcije</th>
         </tr>
     </thead>
     <tbody>
@@ -24,27 +24,29 @@
                 <td>{{ $reservation->quantity }}</td>
                 <td>
                     @if($reservation->status === 'pending')
-                        <span style="color: orange;">Pending</span>
+                        <span style="color: orange;">Na čekanju</span>
                     @elseif($reservation->status === 'completed')
-                        <span style="color: green;">Completed</span>
+                        <span style="color: green;">Završeno</span>
                     @else
-                        <span style="color: red;">Cancelled</span>
+                        <span style="color: red;">Otkazano</span>
                     @endif
                 </td>
                 <td>{{ $reservation->created_at->format('d.m.Y H:i') }}</td>
                 <td>
                     @if($reservation->status === 'completed' && !$reservation->survey)
-                        <a href="{{ route('surveys.create', $reservation->id) }}" class="btn">Create Survey</a>
+                        <a href="{{ route('surveys.create', $reservation->id) }}" class="btn">
+                            Popuni anketu
+                        </a>
                     @elseif($reservation->survey)
-                        <span style="color: green;">Survey completed</span>
+                        <span style="color: green;">Anketa popunjena</span>
                     @else
-                        <span style="color: gray;">Waiting for pickup</span>
+                        <span style="color: gray;">Čeka se preuzimanje</span>
                     @endif
                 </td>
             </tr>
         @empty
             <tr>
-                <td colspan="7">No reservations yet.</td>
+                <td colspan="7">Još uvek nema rezervacija.</td>
             </tr>
         @endforelse
     </tbody>
