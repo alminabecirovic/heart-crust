@@ -9,8 +9,7 @@ class AppServiceProvider extends ServiceProvider
 {
     public function boot()
     {
-        // Форсирај HTTPS у продукцији
-        if ($this->app->environment('production')) {
+        if (config('app.env') === 'production') {
             URL::forceScheme('https');
         }
     }
