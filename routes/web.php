@@ -6,6 +6,8 @@ use App\Http\Controllers\AdminController;
 use App\Http\Controllers\FoodListingController;
 use App\Http\Controllers\ReservationController;
 use App\Http\Controllers\SurveyController;
+use Illuminate\Support\Facades\Hash;
+use App\Models\User;
 
 // Public routes (NO login required)
 Route::get('/', [FoodListingController::class, 'index'])->name('home');
@@ -52,4 +54,27 @@ Route::middleware('auth')->group(function () {
         Route::get('/create/{reservationId}', [SurveyController::class, 'create'])->name('create');
         Route::post('/', [SurveyController::class, 'store'])->name('store');
     });
+});
+
+// --- PRIVREMENA RUTA ZA DIJAGNOSTIKU (OBRISATI NAKON FIX-A) ---
+Route::get('/debug-login', function () {
+    $email = 'admin@primer.com';
+    $user = User::where('email', $email)->first();
+    
+    if (!$user) {
+        return "Korisnik sa emailom {$email} nije pronadjen u bazi.";
+    }
+
+    // Proveravamo da li rec 'password' odgovara hešu koji je trenutno u bazi
+    $check = Hash::check('password', $user->password);
+    
+    return [
+        'info' => 'Dijagnostika logina',
+        'user_found' => true,
+        'email' => $user->email,
+        'password_matches_word_password' => $check,
+        'hash_in_db' => $user->password,
+        'app_key_from_config' => config('app.key'),
+        'session_driver' => config('session.driver'),
+    ];
 });
