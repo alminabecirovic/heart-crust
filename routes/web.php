@@ -58,23 +58,12 @@ Route::middleware('auth')->group(function () {
 
 // --- PRIVREMENA RUTA ZA DIJAGNOSTIKU (OBRISATI NAKON FIX-A) ---
 Route::get('/debug-login', function () {
-    $email = 'admin@primer.com';
-    $user = User::where('email', $email)->first();
-    
-    if (!$user) {
-        return "Korisnik sa emailom {$email} nije pronadjen u bazi.";
-    }
-
-    // Proveravamo da li rec 'password' odgovara hešu koji je trenutno u bazi
-    $check = Hash::check('password', $user->password);
+    // Ovo će nam izlistati prvih 5 korisnika koji su stvarno u bazi
+    $users = \App\Models\User::limit(5)->get(['id', 'email', 'role']);
     
     return [
-        'info' => 'Dijagnostika logina',
-        'user_found' => true,
-        'email' => $user->email,
-        'password_matches_word_password' => $check,
-        'hash_in_db' => $user->password,
-        'app_key_from_config' => config('app.key'),
-        'session_driver' => config('session.driver'),
+        'poruka' => 'Lista korisnika u bazi koju Railway vidi:',
+        'database_name' => DB::connection()->getDatabaseName(),
+        'users_in_db' => $users
     ];
 });
