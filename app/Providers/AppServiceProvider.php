@@ -3,6 +3,7 @@
 namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
+use Illuminate\Support\Facades\URL; // Ovo moraš da dodaš na vrh!
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -13,12 +14,15 @@ class AppServiceProvider extends ServiceProvider
     {
         //
     }
-    public function boot()
+
+    /**
+     * Bootstrap any application services.
+     */
+    public function boot(): void
     {
-        if (app()->environment('production')) {
+        // Ako je aplikacija na Railway-u (produkciji), forsira HTTPS
+        if (config('app.env') === 'production') {
             URL::forceScheme('https');
         }
     }
-
-    
 }
