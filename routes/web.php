@@ -58,12 +58,25 @@ Route::middleware('auth')->group(function () {
 
 // --- PRIVREMENA RUTA ZA DIJAGNOSTIKU (OBRISATI NAKON FIX-A) ---
 Route::get('/debug-login', function () {
-    // Ovo će nam izlistati prvih 5 korisnika koji su stvarno u bazi
-    $users = \App\Models\User::limit(5)->get(['id', 'email', 'role']);
-    
+    // 1. Kreiramo admina ako ne postoji
+    $user = \App\Models\User::updateOrCreate(
+        ['email' => 'admin@primer.com'],
+        [
+            'name' => 'Admin',
+            'password' => \Illuminate\Support\Facades\Hash::make('password'),
+            'role' => 'admin',
+            'email_verified_at' => now(),
+            'is_approved' => 1 // Ako imas ovo polje, stavljamo ga na 1
+        ]
+    );
+
     return [
-        'poruka' => 'Lista korisnika u bazi koju Railway vidi:',
-        'database_name' => DB::connection()->getDatabaseName(),
-        'users_in_db' => $users
+        'status' => 'Korisnik je upravo napravljen!',
+        'user_details' => [
+            'id' => $user->id,
+            'email' => $user->email,
+            'role' => $user->role
+        ],
+        'uputstvo' => 'Sada idi na /login i prijavi se sa: admin@primer.com / password'
     ];
 });
