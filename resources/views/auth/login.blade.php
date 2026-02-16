@@ -13,12 +13,6 @@
             </ul>
         </div>
     @endif
-
-    @if (session('success'))
-        <div style="background-color: #efe; border: 1px solid #cfc; padding: 10px; border-radius: 5px; margin-bottom: 15px; color: #3c3;">
-            {{ session('success') }}
-        </div>
-    @endif
     
     <form action="{{ route('login') }}" method="POST" id="loginForm">
         @csrf
