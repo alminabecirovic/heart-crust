@@ -3,7 +3,12 @@
     box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.05);
     padding: 20px 10px;
     text-align: center;
-    margin-top: auto;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    z-index: 100;
 }
 
 .footer p {
@@ -11,6 +16,11 @@
     font-size: 0.95rem;
     font-weight: 500;
     margin: 0;
+}
+
+/* Dodaj padding na dnu body-a da sadržaj ne ide ispod footera */
+body {
+    padding-bottom: 60px;
 }
 
 /* Responsive */
@@ -21,5 +31,9 @@
     
     .footer p {
         font-size: 0.85rem;
+    }
+    
+    body {
+        padding-bottom: 50px;
     }
 }
