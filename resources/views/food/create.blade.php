@@ -39,7 +39,6 @@
         </div>
 
         <button type="submit" class="btn btn-success">Kreiraj oglas</button>
-        <a href="{{ route('food.my-listings') }}" class="btn">Otkaži</a>
     </form>
 </div>
 @endsection

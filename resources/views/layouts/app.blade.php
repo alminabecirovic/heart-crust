@@ -110,7 +110,7 @@
     <div class="footer-content">
         <div class="footer-section">
             <h3>O nama</h3>
-            <p>Ova platforma je namenjena povezivanju pekara i dobrotvora sa korisnicima kako bi se smanjilo bacanje hrane i omogućilo njeno poklanjanje onima kojima je potrebna.</p>
+            <p>Ova platforma je namenjena povezivanju pekara sa korisnicima kako bi se smanjilo bacanje hrane i omogućilo njeno poklanjanje onima kojima je potrebna.</p>
         </div>
         
         <div class="footer-section">
