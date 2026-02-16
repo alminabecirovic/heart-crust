@@ -2,12 +2,7 @@
     background-color: #FAF7F3;
     box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.05);
     padding: 30px 20px 15px;
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    width: 100%;
-    z-index: 100;
+    margin-top: auto;
 }
 
 .footer-content {
@@ -65,9 +60,16 @@
     margin: 0;
 }
 
-/* Dodaj padding na dnu body-a da sadržaj ne ide ispod footera */
+/* Osiguraj da footer bude na dnu */
 body {
-    padding-bottom: 220px;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    margin: 0;
+}
+
+.container {
+    flex: 1;
 }
 
 /* Responsive */
@@ -97,9 +99,5 @@ body {
     
     .footer-bottom p {
         font-size: 0.8rem;
-    }
-    
-    body {
-        padding-bottom: 280px;
     }
 }
