@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="{{ asset('css/global.css') }}">
     <link rel="stylesheet" href="{{ asset('css/my-listings.css') }}">
     <link rel="stylesheet" href="{{ asset('css/bakery-reservations.css')}}">
+    <link rel="stylesheet" href="{{ asset('css/footer.css') }}">
 </head>
 <body>
     <header>
@@ -104,5 +105,9 @@
 
         @yield('content')
     </div>
+
+    <footer class="footer">
+        <p>Sva prava zadržana &copy; 2026</p>
+    </footer>
 </body>
 </html>
