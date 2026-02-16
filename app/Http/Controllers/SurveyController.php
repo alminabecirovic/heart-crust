@@ -29,11 +29,11 @@ class SurveyController extends Controller
         }
 
         if ($reservation->status !== 'completed') {
-            return back()->withErrors(['error' => 'You can only survey completed reservations.']);
+            return back()->withErrors(['error' => 'Možete oceniti samo završene rezervacije.']);
         }
 
         if ($reservation->survey) {
-            return back()->withErrors(['error' => 'You have already submitted a survey for this reservation.']);
+            return back()->withErrors(['error' => 'Već ste poslali anketu za ovu rezervaciju.']);
         }
 
         return view('surveys.create', compact('reservation'));
@@ -59,7 +59,7 @@ class SurveyController extends Controller
         }
 
         if ($reservation->survey) {
-            return back()->withErrors(['error' => 'You have already submitted a survey for this reservation.']);
+            return back()->withErrors(['error' => 'Već ste poslali anketu za ovu rezervaciju.']);
         }
 
         Survey::create([
@@ -70,6 +70,6 @@ class SurveyController extends Controller
             'comment' => $request->comment,
         ]);
 
-        return redirect()->route('surveys.index')->with('success', 'Survey submitted successfully!');
+        return redirect()->route('surveys.index')->with('success', 'Anketa je uspešno poslata!');
     }
 }

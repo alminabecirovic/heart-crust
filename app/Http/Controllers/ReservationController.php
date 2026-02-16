@@ -22,7 +22,7 @@ class ReservationController extends Controller
         $listing = FoodListing::findOrFail($request->food_listing_id);
 
         if ($listing->quantity < $request->quantity) {
-            return back()->withErrors(['quantity' => 'Not enough quantity available.']);
+            return back()->withErrors(['quantity' => 'Nema dovoljno dostupne količine.']);
         }
 
         Reservation::create([
@@ -38,7 +38,7 @@ class ReservationController extends Controller
             $listing->update(['is_available' => false]);
         }
 
-        return redirect()->route('reservations.index')->with('success', 'Reservation created successfully!');
+        return redirect()->route('reservations.index')->with('success', 'Rezervacija je uspešno kreirana!');
     }
 
     public function index()
@@ -83,6 +83,6 @@ class ReservationController extends Controller
 
         $reservation->update(['status' => 'completed']);
 
-        return back()->with('success', 'Reservation marked as completed!');
+        return back()->with('success', 'Rezervacija je označena kao završena!');
     }
 }

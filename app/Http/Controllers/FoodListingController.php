@@ -72,7 +72,7 @@ class FoodListingController extends Controller
             'ingredients' => $request->ingredients,
         ]);
 
-        return redirect()->route('food.my-listings')->with('success', 'Food listing created successfully!');
+        return redirect()->route('food.my-listings')->with('success', 'Oglas je uspešno kreiran!');
     }
 
     public function edit($id)
@@ -109,7 +109,7 @@ class FoodListingController extends Controller
         $listing->update(['is_available' => false]);
     }
 
-    return redirect()->route('food.my-listings')->with('success', 'Food listing updated successfully!');
+    return redirect()->route('food.my-listings')->with('success', 'Oglas je uspešno ažuriran!');
 }
 
     public function destroy($id)
@@ -126,6 +126,6 @@ class FoodListingController extends Controller
 
         $listing->delete();
 
-        return redirect()->route('food.my-listings')->with('success', 'Food listing deleted successfully!');
+        return redirect()->route('food.my-listings')->with('success', 'Oglas je uspešno obrisan!');
     }
 }

@@ -11,7 +11,7 @@ class AdminController extends Controller
     public function index()
     {
         if (!auth()->user() || !auth()->user()->isAdmin()) {
-            abort(403, 'Unauthorized action.');
+            abort(403, 'Neovlašćena radnja.');
         }
 
         $pendingUsers = User::where('is_approved', false)
@@ -28,7 +28,7 @@ class AdminController extends Controller
     public function approveUser($id)
     {
         if (!auth()->user() || !auth()->user()->isAdmin()) {
-            abort(403, 'Unauthorized action.');
+            abort(403, 'Neovlašćena radnja.');
         }
 
         $user = User::findOrFail($id);
@@ -39,7 +39,7 @@ class AdminController extends Controller
     public function deleteUser($id)
     {
         if (!auth()->user() || !auth()->user()->isAdmin()) {
-            abort(403, 'Unauthorized action.');
+            abort(403, 'Neovlašćena radnja.');
         }
 
         $user = User::findOrFail($id);
@@ -50,7 +50,7 @@ class AdminController extends Controller
     public function deleteFoodListing($id)
     {
         if (!auth()->user() || !auth()->user()->isAdmin()) {
-            abort(403, 'Unauthorized action.');
+            abort(403, 'Neovlašćena radnja.');
         }
 
         $listing = FoodListing::findOrFail($id);

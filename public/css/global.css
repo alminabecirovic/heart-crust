@@ -229,3 +229,34 @@ a:hover {
 .card {
   transition: background-color 0.25s ease, color 0.25s ease, box-shadow 0.25s ease;
 }
+
+/* Alerts / Poruke */
+.alert {
+  padding: 15px 20px;
+  margin-bottom: 20px;
+  border-radius: 8px;
+  font-size: 15px;
+  font-weight: 500;
+  border: 2px solid;
+}
+
+.alert-success {
+  background-color: #e8f5e9;
+  color: #2e7d32;
+  border-color: #D6A99D;
+}
+
+.alert-danger {
+  background-color: #ffebee;
+  color: #c62828;
+  border-color: #D6A99D;
+}
+
+.alert ul {
+  margin: 0;
+  padding-left: 20px;
+}
+
+.alert li {
+  color: #c62828;
+}
