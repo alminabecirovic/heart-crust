@@ -1,8 +1,7 @@
 .footer {
     background-color: #FAF7F3;
     box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.05);
-    padding: 20px 10px;
-    text-align: center;
+    padding: 30px 20px 15px;
     position: fixed;
     bottom: 0;
     left: 0;
@@ -11,29 +10,96 @@
     z-index: 100;
 }
 
-.footer p {
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    margin-bottom: 20px;
+}
+
+.footer-section h3 {
     color: #ca8d84;
-    font-size: 0.95rem;
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.footer-section p {
+    color: #8b6f67;
+    font-size: 0.9rem;
+    line-height: 1.6;
+    margin: 0 0 10px 0;
+}
+
+.admin-contact {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: #ca8d84;
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: 500;
+    padding: 8px 15px;
+    border: 1.5px solid #D6A99D;
+    border-radius: 7px;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.admin-contact:hover {
+    background-color: #ca8d84;
+    color: #FAF7F3;
+}
+
+.footer-bottom {
+    border-top: 1px solid #D6A99D;
+    padding-top: 15px;
+    text-align: center;
+}
+
+.footer-bottom p {
+    color: #ca8d84;
+    font-size: 0.85rem;
     font-weight: 500;
     margin: 0;
 }
 
 /* Dodaj padding na dnu body-a da sadržaj ne ide ispod footera */
 body {
-    padding-bottom: 60px;
+    padding-bottom: 220px;
 }
 
 /* Responsive */
 @media (max-width: 768px) {
     .footer {
-        padding: 15px 10px;
+        padding: 20px 15px 10px;
     }
     
-    .footer p {
+    .footer-content {
+        grid-template-columns: 1fr;
+        gap: 25px;
+        margin-bottom: 15px;
+    }
+    
+    .footer-section h3 {
+        font-size: 1rem;
+    }
+    
+    .footer-section p {
         font-size: 0.85rem;
     }
     
+    .admin-contact {
+        font-size: 0.9rem;
+        padding: 6px 12px;
+    }
+    
+    .footer-bottom p {
+        font-size: 0.8rem;
+    }
+    
     body {
-        padding-bottom: 50px;
+        padding-bottom: 280px;
     }
 }
