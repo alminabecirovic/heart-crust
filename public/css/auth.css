@@ -91,25 +91,6 @@
   text-decoration: underline;
 }
 
-/* Error Messages */
-.alert {
-  padding: 12px 15px;
-  border-radius: 6px;
-  margin-bottom: 20px;
-  font-size: 14px;
-}
-
-.alert-danger {
-  background: none;
-  border: none;
-  color: #333;
-}
-
-.alert-success {
-  background: none;
-  border: none;
-  color: #333;
-}
 
 /* Responsive */
 @media (max-width: 600px) {
