@@ -100,15 +100,15 @@
 }
 
 .alert-danger {
-  background: #FFE5E5;
-  border: 1px solid #D6A99D;
-  color: #8B4A4A;
+  background: none;
+  border: none;
+  color: #333;
 }
 
 .alert-success {
-  background: #E8F5E9;
-  border: 1px solid #81C784;
-  color: #2E7D32;
+  background: none;
+  border: none;
+  color: #333;
 }
 
 /* Responsive */
