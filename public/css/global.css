@@ -25,12 +25,11 @@ body {
   margin: 0;
 }
 
-/* GLAVNI CONTAINER - samo jedna definicija */
 .container {
   flex: 1;
   max-width: 1200px;
   margin: 20px auto;
-  padding: 0 20px 50px 20px; /* Dodaj padding na dnu */
+  padding: 0 20px;
 }
 
 html {
@@ -72,6 +71,7 @@ a:hover {
   text-decoration: underline;
 }
 
+
 .btn-primary {
   background: #D6A99D;
   color: white;
@@ -79,6 +79,7 @@ a:hover {
 
 .btn-primary:hover {
   background: #C4957F;
+  transform: translateY(-2px);
   box-shadow: 0 6px 12px rgba(214, 169, 157, 0.3);
 }
 
@@ -104,6 +105,7 @@ a:hover {
 }
 
 .card:hover {
+  transform: translateY(-4px);
   box-shadow: 0 8px 20px rgba(214, 169, 157, 0.2);
 }
 
@@ -175,6 +177,12 @@ a:hover {
   color: #D6A99D;
 }
 
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
 /* Responsive */
 @media (max-width: 768px) {
   h1 { font-size: 28px; }
@@ -182,7 +190,7 @@ a:hover {
   h3 { font-size: 20px; }
 
   .container {
-    padding: 0 15px 40px 15px;
+    padding: 0 15px;
   }
 }
 
@@ -200,7 +208,6 @@ a:hover {
     padding: 12px;
   }
 }
-
 /* ===============================
    GLOBAL FIX – no hover movement
    =============================== */
