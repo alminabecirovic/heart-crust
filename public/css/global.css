@@ -15,7 +15,7 @@
 }
 
 body {
-   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   background: linear-gradient(135deg, #F0E4D3 0%, #DCC5B2 100%);
   color: var(--dark-text);
   line-height: 1.6;
@@ -24,10 +24,12 @@ body {
   flex-direction: column;
   margin: 0;
 }
+
 .container {
-    flex: 1;
-  margin-top: 10px;
-  margin-bottom: 10px;
+  flex: 1;
+  max-width: 1200px;
+  margin: 20px auto;
+  padding: 0 20px;
 }
 
 html {
