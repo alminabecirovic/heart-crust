@@ -79,4 +79,15 @@ Route::get('/debug-login', function () {
         ],
         'uputstvo' => 'Sada idi na /login i prijavi se sa: admin@primer.com / password'
     ];
+    
+});
+use Illuminate\Support\Facades\DB;
+
+Route::get('/test-db', function () {
+    try {
+        DB::table('ime_tvoje_tabele')->insert(['kolona' => 'test']);
+        return "Upisano u bazu!";
+    } catch (\Exception $e) {
+        return "Greška: " . $e->getMessage();
+    }
 });
