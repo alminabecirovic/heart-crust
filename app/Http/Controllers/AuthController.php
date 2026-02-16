@@ -32,11 +32,12 @@ class AuthController extends Controller
         'role' => $request->role,
         'bakery_name' => $request->bakery_name,
         'address' => $request->address,
-        'is_approved' => false, // Svi čekaju odobrenje
+        'is_approved' => false,
     ]);
 
-    return redirect()->route('login')->with('success', 'Registration successful! Wait for admin approval.');
+    return redirect()->route('login')->with('success', 'Registracija uspešna! Sačekajte odobrenje administratora.');
 }
+    
     public function showLogin()
     {
         return view('auth.login');
@@ -54,7 +55,7 @@ class AuthController extends Controller
         
         if (!$user->is_approved && $user->role !== 'guest') {
             Auth::logout();
-            return back()->withErrors(['email' => 'Your account is not approved yet.']);
+            return back()->withErrors(['email' => 'Vaš nalog još uvek nije odobren.']);
         }
 
         $request->session()->regenerate();
@@ -62,7 +63,7 @@ class AuthController extends Controller
     }
 
     return back()->withErrors([
-        'email' => 'The provided credentials do not match our records.',
+        'email' => 'Uneti podaci se ne poklapaju sa našim zapisima.',
     ]);
 }
 
