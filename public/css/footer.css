@@ -33,15 +33,12 @@
     align-items: center;
     gap: 8px;
     color: #ca8d84;
-    text-decoration: none;
     font-size: 1rem;
     font-weight: 500;
     padding: 8px 15px;
     border: 1.5px solid #D6A99D;
     border-radius: 7px;
-    transition: background-color 0.2s ease, color 0.2s ease;
 }
-
 .admin-contact:hover {
     background-color: #ca8d84;
     color: #FAF7F3;
