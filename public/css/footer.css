@@ -2,7 +2,7 @@
     background-color: #FAF7F3;
     box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.05);
     padding: 30px 20px 15px;
-    margin-top: auto;
+    margin-top: 50px; /* Dodaj ovo! */
 }
 
 .footer-content {
