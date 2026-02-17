@@ -1,14 +1,11 @@
 /* Auth Views - Login & Register */
 
 .card {
-  background: #FAF7F3;
+  background: #FBF3D5;
   border-radius: 12px;
   padding: 40px;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
   border: 2px solid #D6A99D;
-  margin: 50px ;
-  max-width: 600px;  /* Ovo je idealna širina za forme da ne budu ni preuske ni preširoke */
-  width: 100%;       /* Osigurava responzivnost */
 }
 
 .card h2 {

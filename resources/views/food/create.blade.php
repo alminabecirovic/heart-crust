@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="card" style=" margin-top: 50px auto;">
+<div class="card" style="max-width: 600px; margin: 50px auto;">
     <h2>Dodaj novu hranu</h2>
     
     <form action="{{ route('food.store') }}" method="POST" enctype="multipart/form-data">
@@ -29,13 +29,8 @@
         </div>
 
         <div class="form-group">
-            <div class="form-group">
             <label for="made_at">Vreme pripreme</label>
-            <input type="datetime-local" name="made_at" id="made_at" 
-            value="{{ old('made_at') }}" 
-            max="{{ \Carbon\Carbon::now()->format('Y-m-d\TH:i') }}"
-            required>
-        </div>
+            <input type="datetime-local" name="made_at" id="made_at" value="{{ old('made_at') }}" required>
         </div>
 
         <div class="form-group">
