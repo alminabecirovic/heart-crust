@@ -29,7 +29,6 @@
         </div>
 
         <div class="form-group">
-            <label for="made_at">Vreme pripreme</label>
             <div class="form-group">
             <label for="made_at">Vreme pripreme</label>
             <input type="datetime-local" name="made_at" id="made_at" 
