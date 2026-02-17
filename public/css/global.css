@@ -20,16 +20,10 @@ body {
   color: var(--dark-text);
   line-height: 1.6;
   min-height: 100vh;
+  width: 100%;
   display: flex;
   flex-direction: column;
   margin: 0;
-}
-
-.container {
-  flex: 1;
-  max-width: 1200px;
-  margin: 20px auto;
-  padding: 0 20px;
 }
 
 html {
