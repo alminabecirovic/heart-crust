@@ -21,12 +21,14 @@ body {
   color: var(--dark-text);
   line-height: 1.6;
   min-height: 100vh;
+  display: flex;
+  flex-direction: column;
   margin: 0;
-  width: 100%;
 }
 
-/* SAMO OVAJ - obriši drugi */
 .container {
+  flex: 1;
+  width: 100%;              /* ← ovo dodaj */
   max-width: 1200px;
   margin: 20px auto;
   padding: 0 20px;
