@@ -4,15 +4,6 @@
 <div class="card" style="max-width: 800px; margin: 50px auto;">
     <h2>Prijava</h2>
     
-    @if ($errors->any())
-        <div style="background-color: #fee; border: 1px solid #fcc; padding: 10px; border-radius: 5px; margin-bottom: 15px;">
-            <ul style="margin: 0; padding-left: 20px;">
-                @foreach ($errors->all() as $error)
-                    <li style="color: #c33;">{{ $error }}</li>
-                @endforeach
-            </ul>
-        </div>
-    @endif
     
     <form action="{{ route('login') }}" method="POST" id="loginForm">
         @csrf
