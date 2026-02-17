@@ -86,7 +86,7 @@
         </nav>
     </header>
 
-    <div class="container">
+   <div class="container" style="max-width: 100%; padding: 0 60px;">
         @if(session('success'))
             <div class="alert alert-success">
                 {{ session('success') }}
