@@ -30,7 +30,12 @@
 
         <div class="form-group">
             <label for="made_at">Vreme pripreme</label>
-            <input type="datetime-local" name="made_at" id="made_at" value="{{ old('made_at') }}" required>
+            <input type="datetime-local" 
+            name="made_at" 
+            id="made_at" 
+            value="{{ old('made_at') }}" 
+            max="{{ now()->format('Y-m-d\TH:i') }}" 
+            required>
         </div>
 
         <div class="form-group">
