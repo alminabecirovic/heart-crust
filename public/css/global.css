@@ -10,23 +10,22 @@
   --primary-color: #D6A99D;
   --accent-color: #F7F1DE;
   --dark-text: #333;
-  --light-text: #8B6F5E;
+  --light-text: #1d1917;
   --border-color: #D6A99D;
 }
 
+/* NOVO */
 body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   background: linear-gradient(135deg, #F0E4D3 0%, #DCC5B2 100%);
   color: var(--dark-text);
   line-height: 1.6;
   min-height: 100vh;
-  display: flex;
-  flex-direction: column;
   margin: 0;
 }
 
+/* SAMO OVAJ - obriši drugi */
 .container {
-  flex: 1;
   max-width: 1200px;
   margin: 20px auto;
   padding: 0 20px;
