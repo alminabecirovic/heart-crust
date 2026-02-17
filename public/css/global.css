@@ -101,6 +101,7 @@ a:hover {
   padding: 30px;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
   border: 2px solid #D6A99D;
+  margin-top: 50px;
 }
 
 .card:hover {
@@ -176,6 +177,11 @@ a:hover {
   color: #D6A99D;
 }
 
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
 
 /* Responsive */
 @media (max-width: 768px) {
@@ -223,5 +229,3 @@ a:hover {
 .card {
   transition: background-color 0.25s ease, color 0.25s ease, box-shadow 0.25s ease;
 }
-
-/* Alerts / Poruke */
