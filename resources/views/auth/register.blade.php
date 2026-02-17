@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="card" style="max-width: 500px; margin: 50px auto;">
+<div class="card" style="max-width: 800px; margin: 50px auto;">
     <h2>Registracija</h2>
     
     @if ($errors->any())

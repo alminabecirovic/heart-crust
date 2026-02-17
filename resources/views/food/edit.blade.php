@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="card" style="max-width: 600px; margin: 0 auto;">
+<div class="card" style="max-width: 800px; margin: 0 auto;">
     <h2>Izmena oglasa hrane</h2>
     
     <div style="background-color: #f8f9fa; padding: 15px; border-radius: 5px; margin-bottom: 20px;">
