@@ -89,22 +89,9 @@
   text-decoration: underline;
 }
 
-/* Error Messages */
-.alert {
-  padding: 12px 15px;
-  border-radius: 6px;
-  margin-bottom: 20px;
-  font-size: 14px;
-}
 
-.alert-danger {
-  background: #FFE5E5;
-  border: 1px solid #D6A99D;
-}
 
-.alert-success {
-  background: #E8F5E9;
-}
+
 
 /* Responsive */
 @media (max-width: 600px) {
