@@ -10,7 +10,7 @@
   --primary-color: #D6A99D;
   --accent-color: #F7F1DE;
   --dark-text: #333;
-  --light-text: #1d1917;
+  --light-text: #8B6F5E;
   --border-color: #D6A99D;
 }
 
@@ -23,15 +23,13 @@ body {
   display: flex;
   flex-direction: column;
   margin: 0;
-  width: 100%;          /* ← uvijek puna širina */
 }
 
 .container {
   flex: 1;
-  width: 100%;
-  max-width: 100%;      /* ← bez ograničenja */
+  max-width: 1200px;
   margin: 20px auto;
-  padding: 0 80px;      /* ← malo više bočnog razmaka umjesto 40px */
+  padding: 0 20px;
 }
 
 html {
@@ -45,9 +43,17 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: 600;
 }
 
-h1 { font-size: 36px; }
-h2 { font-size: 28px; }
-h3 { font-size: 22px; }
+h1 {
+  font-size: 36px;
+}
+
+h2 {
+  font-size: 28px;
+}
+
+h3 {
+  font-size: 22px;
+}
 
 p {
   color: var(--light-text);
@@ -65,7 +71,7 @@ a:hover {
   text-decoration: underline;
 }
 
-/* Buttons */
+
 .btn-primary {
   background: #D6A99D;
   color: white;
@@ -73,6 +79,7 @@ a:hover {
 
 .btn-primary:hover {
   background: #C4957F;
+  transform: translateY(-2px);
   box-shadow: 0 6px 12px rgba(214, 169, 157, 0.3);
 }
 
@@ -95,6 +102,11 @@ a:hover {
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
   border: 2px solid #D6A99D;
   margin-top: 50px;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px rgba(214, 169, 157, 0.2);
 }
 
 /* Forms */
@@ -137,7 +149,7 @@ a:hover {
   min-height: 120px;
 }
 
-/* Spacing utilities */
+/* Spacing */
 .mt-1 { margin-top: 10px; }
 .mt-2 { margin-top: 20px; }
 .mt-3 { margin-top: 30px; }
@@ -149,43 +161,36 @@ a:hover {
 .p-3 { padding: 30px; }
 
 /* Utilities */
-.text-center { text-align: center; }
-.text-right  { text-align: right; }
-.text-light  { color: var(--light-text); }
-.text-primary { color: #D6A99D; }
-
-/* ===============================
-   GLOBAL FIX – no hover movement
-   =============================== */
-.btn-primary:hover,
-.btn-secondary:hover,
-.btn:hover {
-  transform: none !important;
+.text-center {
+  text-align: center;
 }
 
-.card:hover {
-  transform: none !important;
+.text-right {
+  text-align: right;
 }
 
-.btn,
-.card {
-  transition: background-color 0.25s ease, color 0.25s ease, box-shadow 0.25s ease;
+.text-light {
+  color: var(--light-text);
+}
+
+.text-primary {
+  color: #D6A99D;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
 }
 
 /* Responsive */
-@media (max-width: 1024px) {
-  .container {
-    padding: 0 40px;
-  }
-}
-
 @media (max-width: 768px) {
   h1 { font-size: 28px; }
   h2 { font-size: 24px; }
   h3 { font-size: 20px; }
 
   .container {
-    padding: 0 20px;
+    padding: 0 15px;
   }
 }
 
@@ -193,10 +198,6 @@ a:hover {
   h1 { font-size: 24px; }
   h2 { font-size: 20px; }
   h3 { font-size: 18px; }
-
-  .container {
-    padding: 0 15px;
-  }
 
   .card {
     padding: 20px;
@@ -207,3 +208,26 @@ a:hover {
     padding: 12px;
   }
 }
+/* ===============================
+   GLOBAL FIX – no hover movement
+   =============================== */
+
+/* Dugmad – bez pomeranja */
+.btn-primary:hover,
+.btn-secondary:hover,
+.btn:hover {
+  transform: none !important;
+}
+
+/* Kartice – bez pomeranja */
+.card:hover {
+  transform: none !important;
+}
+
+/* Smooth hover bez skakanja */
+.btn,
+.card {
+  transition: background-color 0.25s ease, color 0.25s ease, box-shadow 0.25s ease;
+}
+
+/* Alerts / Poruke */
