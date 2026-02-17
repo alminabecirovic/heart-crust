@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="card" style="max-width: 600px; margin: 0 auto;">
+<div class="card" style=" margin-top: 50px auto;">
     <h2>Kreiraj anketu</h2>
     
     <p><strong>Pekara:</strong> {{ $reservation->foodListing->bakery_name }}</p>
